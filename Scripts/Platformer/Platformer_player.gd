@@ -15,20 +15,20 @@ func _physics_process(delta):
 	
 	motion.y += GRAVITY
 	
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("right"):
 		motion.x = min(motion.x + ACCELERATION, MAX_SPEED)
 		
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("left"):
 		motion.x = max(motion.x - ACCELERATION, - MAX_SPEED)
 		
 	if is_on_floor():
 		motion.y = 0
 			
-		if not Input.is_action_pressed("ui_right") and not Input.is_action_pressed("ui_left"):
+		if not Input.is_action_pressed("right") and not Input.is_action_pressed("left"):
 			idle = true
 			motion.x = lerp(motion.x, 0, FRICTION)	
 	
-		if Input.is_action_pressed("ui_up"):
+		if Input.is_action_pressed("jump"):
 			motion.y -= JUMP
 			
 	if not is_on_floor():
