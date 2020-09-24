@@ -5,8 +5,8 @@ var motion = Vector2()
 export var ACCELERATION = 200
 export var MAX_SPEED = 250
 export var FRICTION = 0.4
-export var GRAVITY = 325
-export var JUMP = 350
+export var GRAVITY = 50
+export var JUMP = 1000
 export var AIR_FRICTION = 0.2
 const UP = Vector2(0, -1)
 
