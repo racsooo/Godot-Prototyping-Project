@@ -2,12 +2,12 @@ extends KinematicBody2D
 
 var motion = Vector2()
 
-var ACCELERATION = 60
-var MAX_SPEED = 80
-const FRICTION = 0.4
-const GRAVITY = 10
-const JUMP = 275
-const AIR_FRICTION = 0.2
+export var ACCELERATION = 200
+export var MAX_SPEED = 250
+export var FRICTION = 0.4
+export var GRAVITY = 325
+export var JUMP = 350
+export var AIR_FRICTION = 0.2
 const UP = Vector2(0, -1)
 
 func _physics_process(delta):
@@ -36,4 +36,4 @@ func _physics_process(delta):
 			motion.x = lerp(motion.x, 0, AIR_FRICTION)
 	
 	
-	move_and_slide(motion, UP)
+	motion = move_and_slide(motion, UP)
